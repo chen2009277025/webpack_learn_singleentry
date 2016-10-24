@@ -3,7 +3,7 @@ var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 module.exports = {
     //插件项
-    plugins: [commonsPlugin],
+    plugins: [commonsPlugin,[{ "libraryName": "antd", "style": true }]],
     //页面入口文件配置
     entry: {
         index : './src/js/page/index.js'
@@ -17,19 +17,17 @@ module.exports = {
         //加载器配置
         loaders: [
             { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.js$/, loader: 'babel',  exclude: /(node_modules|bower_components)/, query: { presets: ['es2015'] }},
+            { test: /\.js$/, loader: 'babel',  exclude: /(node_modules|bower_components)/, query: { presets: ['react','es2015'] }},
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
+            { test: /\.less$/, loader: 'style!css!less?sourceMap'},
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
     //其它解决方案配置
     resolve: {
-        root: 'E:/github/flux-example/src', //绝对路径
         extensions: ['', '.js', '.json', '.scss'],
         alias: {
-            AppStore : 'js/stores/AppStores.js',
-            ActionType : 'js/actions/ActionType.js',
-            AppAction : 'js/actions/AppAction.js'
+            
         }
     }
 };
