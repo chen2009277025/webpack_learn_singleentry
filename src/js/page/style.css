@@ -2,3 +2,7 @@ body{
     height: 200px;
     background: #880000;
 }
+
+.handle{
+    cursor: pointer;
+}

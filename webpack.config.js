@@ -17,7 +17,7 @@ module.exports = {
         //加载器配置
         loaders: [
             { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.js$/, loader: 'babel',  exclude: /(node_modules|bower_components)/, query: { presets: ['es2015'] }},
+            { test: /\.js$/, loader: 'babel',  exclude: /(node_modules|bower_components)/, query: { presets: ['es2015','react'] }},
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
