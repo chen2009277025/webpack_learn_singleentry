@@ -2,6 +2,13 @@
  * Created by chenjianhui on 16/10/10.
  */
 
-import './style.css';
+import Vue from 'vue'
+import App from './component/Basget.vue'
 
-alert("hello");
+new Vue({
+    el:"#app",
+    template:"<App name='chen'/>",
+    components : {
+        App
+    }
+})

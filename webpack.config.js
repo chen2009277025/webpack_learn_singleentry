@@ -11,13 +11,15 @@ module.exports = {
     //入口文件输出配置
     output: {
         path: 'dist/js/page',
-        filename: '[name].js'
+        filename: '[name].js',
+        publicPath:"dist/js/page/"
     },
     module: {
         //加载器配置
         loaders: [
             { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.js$/, loader: 'babel',  exclude: /(node_modules|bower_components)/, query: { presets: ['es2015'] }},
+            { test: /\.js$/, loader: 'babel',  exclude: /(node_modules|bower_components)/},
+            { test: /\.vue$/, loader: 'vue'},
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
@@ -25,11 +27,9 @@ module.exports = {
     //其它解决方案配置
     resolve: {
         root: 'E:/github/flux-example/src', //绝对路径
-        extensions: ['', '.js', '.json', '.scss'],
+        extensions: ['', '.js', '.json', '.scss','.vue'],
         alias: {
-            AppStore : 'js/stores/AppStores.js',
-            ActionType : 'js/actions/ActionType.js',
-            AppAction : 'js/actions/AppAction.js'
+            vue : 'vue/dist/vue.js'
         }
     }
 };

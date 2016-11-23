@@ -21,6 +21,11 @@
     "webpack": "^1.13.2"
   },
   "dependencies": {
-    "babel-core": "^6.17.0"
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "vue": "^2.0.8",
+    "vue-loader": "^9.9.5"
   }
 }
