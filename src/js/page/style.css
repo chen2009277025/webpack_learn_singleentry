@@ -1,8 +1,17 @@
-body{
-    height: 200px;
-    background: #880000;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-.handle{
-    cursor: pointer;
+ul{
+    list-style: none;
+}
+
+li{
+    height: 50px;
+    line-height: 50px;
+}
+
+li:nth-child(2n+1){
+    background: #b4b472;
 }
